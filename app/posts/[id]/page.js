@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 
 function formatDate(dateStr) {
   if (!dateStr) return null;
@@ -154,6 +155,7 @@ export default function PostPage() {
           </article>
         )}
       </div>
+      <SiteFooter />
     </div>
   );
 }

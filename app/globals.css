@@ -522,3 +522,27 @@ button {
 .article-list li {
   margin-bottom: 0.45rem;
 }
+
+/* ---------- site footer ---------- */
+
+.site-footer {
+  max-width: 1120px;
+  margin: 3rem auto 0;
+  padding: 1.5rem 1.5rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+.footer-link {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
