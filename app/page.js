@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 
 const CATEGORY_LABELS = {
   all: "All",
   scholarship: "Scholarships",
   job: "Jobs",
-  update: "News",
-  news: "Updates",
+  news: "News",
+  update: "Updates",
 };
 
 function formatDate(dateStr) {
@@ -98,15 +99,21 @@ export default function HomePage() {
                 <span className="deadline">
                   {post.deadline ? `Due ${formatDate(post.deadline)}` : ""}
                 </span>
-                {post.link && (
-                  <a
-                    className="notice-link"
-                    href={post.link}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    View / Apply →
-                  </a>
+                {post.content ? (
+                  <Link className="notice-link" href={`/posts/${post.id}`}>
+                    Read full story →
+                  </Link>
+                ) : (
+                  post.link && (
+                    <a
+                      className="notice-link"
+                      href={post.link}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      View / Apply →
+                    </a>
+                  )
                 )}
               </div>
             </article>

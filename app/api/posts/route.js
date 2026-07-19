@@ -15,7 +15,7 @@ export async function GET() {
 
 export async function POST(request) {
   const body = await request.json();
-  const { category, title, organization, description, link, location, deadline } = body;
+  const { category, title, organization, description, content, link, location, deadline } = body;
 
   if (!category || !VALID_CATEGORIES.includes(category)) {
     return NextResponse.json({ error: "A valid category is required." }, { status: 400 });
@@ -33,6 +33,7 @@ export async function POST(request) {
       title: title.trim(),
       organization: organization?.trim() || null,
       description: description.trim(),
+      content: content?.trim() || null,
       link: link?.trim() || null,
       location: location?.trim() || null,
       deadline: deadline ? new Date(deadline) : null,
