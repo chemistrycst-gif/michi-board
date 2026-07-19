@@ -1,1 +1,11 @@
-{}
+{
+  "/api/posts/route": "app/api/posts/route.js",
+  "/jobs/page": "app/jobs/page.js",
+  "/api/posts/[id]/route": "app/api/posts/[id]/route.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/page": "app/page.js",
+  "/posts/[id]/page": "app/posts/[id]/page.js",
+  "/scholarships/page": "app/scholarships/page.js",
+  "/news/page": "app/news/page.js"
+}

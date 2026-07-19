@@ -78,9 +78,20 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 2.5rem 0 2.75rem;
-  margin-bottom: 2rem;
-  text-align: center;
+  padding: 2rem 0 2.25rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title-link {
+  text-decoration: none;
 }
 
 .site-tagline {
@@ -90,13 +101,13 @@ button {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary);
-  margin: 0;
+  margin: 0 0 1.25rem;
 }
 
 .site-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.1rem, 5vw, 3rem);
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
   letter-spacing: -0.02em;
   margin: 0;
   color: var(--ink);
@@ -120,6 +131,33 @@ button {
   color: var(--primary);
 }
 
+.site-nav {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.nav-link[data-active="true"] {
+  color: #fff;
+  background: var(--primary);
+}
+
 /* ---------- controls ---------- */
 
 .controls {
@@ -127,47 +165,8 @@ button {
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 2rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0.75rem;
-  z-index: 5;
-  background: rgba(245, 247, 250, 0.85);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
-  padding: 0.75rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-}
-
-.tabs {
-  display: flex;
-  gap: 0.3rem;
-  flex-wrap: wrap;
-}
-
-.tab {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 600;
-  background: transparent;
-  border: none;
-  padding: 0.55rem 1.05rem;
-  border-radius: 999px;
-  cursor: pointer;
-  color: var(--ink-soft);
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.tab:hover {
-  background: var(--primary-light);
-  color: var(--primary-dark);
-}
-
-.tab[data-active="true"] {
-  color: #fff;
-  background: var(--primary);
 }
 
 .search {
