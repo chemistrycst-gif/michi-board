@@ -8,6 +8,7 @@ const EMPTY_FORM = {
   title: "",
   organization: "",
   description: "",
+  content: "",
   link: "",
   location: "",
   deadline: "",
@@ -45,6 +46,7 @@ export default function DashboardPage() {
       title: post.title,
       organization: post.organization || "",
       description: post.description,
+      content: post.content || "",
       link: post.link || "",
       location: post.location || "",
       deadline: post.deadline ? post.deadline.slice(0, 10) : "",
@@ -123,8 +125,8 @@ export default function DashboardPage() {
             >
               <option value="scholarship">Scholarship</option>
               <option value="job">Job</option>
-              <option value="news">News</option>
               <option value="update">Update</option>
+              <option value="news">News</option>
             </select>
           </div>
           <div className="field">
@@ -147,17 +149,34 @@ export default function DashboardPage() {
             />
           </div>
           <div className="field">
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description">Short summary</label>
             <textarea
               id="description"
               value={form.description}
               onChange={(e) => updateField("description", e.target.value)}
-              placeholder="Who it's for, eligibility, and any details worth knowing."
+              placeholder="A 1-2 sentence preview shown on the card."
               required
             />
           </div>
           <div className="field">
-            <label htmlFor="link">Link to apply / learn more (optional)</label>
+            <label htmlFor="content">Full story (optional)</label>
+            <textarea
+              id="content"
+              value={form.content}
+              onChange={(e) => updateField("content", e.target.value)}
+              placeholder={
+                "Write the full story here. Leave blank for a short posting only.\n\n" +
+                "Formatting you can use:\n" +
+                "## Responsibilities   (makes a heading)\n" +
+                "- Manage daily operations   (makes a bullet point)\n" +
+                "**bold text**   (makes text bold)\n\n" +
+                "Leave a blank line between paragraphs."
+              }
+              style={{ minHeight: "220px" }}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="link">Link to apply / source (optional)</label>
             <input
               id="link"
               value={form.link}
