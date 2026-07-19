@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Michi Board",
-  description: "Scholarships, jobs, and news worth knowing about.",
+  title: "The Opportunity Board",
+  description: "Scholarships, jobs, and updates worth knowing about.",
 };
 
 export default function RootLayout({ children }) {

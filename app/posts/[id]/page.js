@@ -141,7 +141,7 @@ export default function PostPage() {
             </div>
 
             {post.link && (
-              
+              <a
                 className="notice-link"
                 href={post.link}
                 target="_blank"
